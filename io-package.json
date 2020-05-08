@@ -1,0 +1,60 @@
+{
+   "common": {
+      "name": "weblogin",
+      "version": "0.0.1",
+      "news": {
+         "0.0.1": {
+            "en": "Alpha",
+            "de": "Alpha"
+         }
+      },
+      "title": "Extended Web Login Page",
+      "titleLang": {
+         "en": "Extended Web Login Page",
+         "de": "Erweiterter Web-Anmeldebildschirm"
+      },
+      "desc": {
+         "en": "Use the web login page with alternative login possibilities",
+         "de": "Verwende den Web-Anmeldebildschirm mit alternativen Anmeldemöglichkeiten"
+      },
+      "authors": [
+         "Armin Junge <armin.junge.81@gmail.com>"
+      ],
+      "keywords": [
+         "web",
+         "Login",
+         "Authentication",
+         "Google"
+      ],
+      "license": "MIT",
+      "platform": "Javascript/Node.js",
+      "icon": "admin/logo-login.png",
+      "enabled": true,
+      "extIcon": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/admin/logo-login.png",
+      "readme": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/README.md",
+      "loglevel": "info",
+      "mode": "extension",
+      "singleton": true,
+      "type": "general",
+      "webExtension": "webextension.js",
+      "onlyWWW": true,
+      "compact": true,
+      "materialize": true,
+      "dependencies": [
+         {
+            "admin": ">=4.0.9",
+            "web": ">=3.0.7"
+         }
+      ],
+      "restartAdapters": [
+         "web"
+      ]
+   },
+   "native": {
+      "webInstance": "*",
+      "firstTimeCheckbox": true,
+      "google": true
+   },
+   "objects": [],
+   "instanceObjects": []
+}

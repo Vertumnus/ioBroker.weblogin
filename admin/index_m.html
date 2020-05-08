@@ -1,0 +1,111 @@
+<html>
+
+<head>
+
+   <!-- Load ioBroker scripts and styles-->
+   <link rel="stylesheet" type="text/css" href="../../css/adapter.css" />
+   <link rel="stylesheet" type="text/css" href="../../lib/css/materialize.css" />
+
+   <script type="text/javascript" src="../../lib/js/jquery-3.2.1.min.js"></script>
+   <script type="text/javascript" src="../../socket.io/socket.io.js"></script>
+
+   <script type="text/javascript" src="../../js/translate.js"></script>
+   <script type="text/javascript" src="../../lib/js/materialize.js"></script>
+   <script type="text/javascript" src="../../js/adapter-settings.js"></script>
+
+   <script type="text/javascript" src="words.js"></script>
+
+   <script type="text/javascript">
+      // This will be called by the admin adapter when the settings page loads
+      function load(settings, onChange) {
+         // example: select elements with id=key and class=value and insert value
+         if (!settings) return;
+         $('.value').each(function () {
+            var $key = $(this);
+            var id = $key.attr('id');
+            if ($key.attr('type') === 'checkbox') {
+               // do not call onChange direct, because onChange could expect some arguments
+               $key.prop('checked', settings[id])
+                  .on('change', () => onChange());
+            } else {
+               // do not call onChange direct, because onChange could expect some arguments
+               $key.val(settings[id])
+                  .on('change', () => onChange())
+                  .on('keyup', () => onChange());
+            }
+         });
+         onChange(false);
+
+         getExtendableInstances(function (result) {
+            if (!result)
+               return;
+               
+            var text = '';
+            for (var r = 0; r < result.length; r++) {
+               var name = result[r]._id.substring('system.adapter.'.length);
+               text += '<option value="' + name + '" ' + (settings.webInstance === name ? 'selected' : '') + '>' + name + '</option>';
+            }
+            $('#webInstance').append(text).select();
+         });
+
+         // reinitialize all the Materialize labels on the page if you are dynamically adding inputs:
+         if (M) M.updateTextFields();
+      }
+
+      // This will be called by the admin adapter when the user presses the save button
+      function save(callback) {
+         // example: select elements with class=value and build settings object
+         var obj = {};
+         $('.value').each(function () {
+            var $this = $(this);
+            if ($this.attr('type') === 'checkbox') {
+               obj[$this.attr('id')] = $this.prop('checked');
+            } else {
+               obj[$this.attr('id')] = $this.val();
+            }
+         });
+         callback(obj);
+      }
+   </script>
+
+   <title>Extend Web Login Page</title>
+   
+</head>
+
+<body>
+
+   <div class="m adapter-container">
+
+      <div class="row">
+         <div class="col s6 m4 l2">
+            <img src="logo-login.png" class="logo">
+         </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+         <div class="col s12 input-field">
+            <i class="material-icons prefix">web</i>
+            <select class="value multiple" id="webInstance">
+               <option value="*" class="translate">All</option>
+            </select>
+            <label for="webInstance" class="translate">WebAdapter</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col s12 m6 input-field">
+            <i class="material-icons prefix">link</i>
+            <input class="value" type="checkbox" id="firstTimeCheckbox" />
+            <label for="firstTimeCheckbox" class="translate">FirstTime</label>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col s12 m6 input-field">
+            <input class="value" type="checkbox" id="google" />
+            <label for="google">Google</label>
+         </div>
+      </div>
+   </div>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+   "name": "iobroker.weblogin",
+   "description": "ioBroker Extended Web Login Page",
+   "version": "0.0.1",
+   "keywords": [
+      "ioBroker",
+      "Smarthome",
+      "Home Automation",
+      "Adapter",
+      "web",
+      "Authentication",
+      "Login"
+   ],
+   "homepage": "https://github.com/Vertumnus/ioBroker.weblogin",
+   "bugs": "https://github.com/Vertumnus/ioBroker.weblogin/issues",
+   "author": "Armin Junge",
+   "license": "MIT",
+   "repository": "github:Vertumnus/ioBroker.weblogin",
+   "contributors": [],
+   "dependencies": {
+   }
+}
