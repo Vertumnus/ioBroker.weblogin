@@ -37,7 +37,7 @@ class WebExtension {
             return res.redirect((req.query.href)?req.query.href:'/')
          }
          // override login screen
-         let sLoginPage = fs.readFileSync('www/login/index.html').toString('utf8')
+         let sLoginPage = fs.readFileSync(path.join(__dirname, '../iobroker.web/www/login/index.html')).toString('utf8')
          if(this.config.firstTimeCheckbox){
             // Inject first time checkbox
             const sFirstTimeChk = fs.readFileSync(path.join(__dirname, 'www/views/firsttime.fraction.html')).toString('utf8')

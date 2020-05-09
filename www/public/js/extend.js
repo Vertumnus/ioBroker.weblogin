@@ -15,26 +15,41 @@ var extendDictionary = {
    },
    "loginNeeded": {
       "en": "Specify login name and password for first time login",
-      "de": "Für die Erstanmeldung werden Loginname und Kennwort benötigt"
+      "de": "Gib den Anmeldenamen und das Kennwort für die erstmalige Anmeldung an",
+      "ru": "Укажите логин и пароль для первого входа",
+      "pt": "Especifique o nome e a senha de login para o primeiro login",
+      "nl": "Geef de gebruikersnaam en het wachtwoord op voor de eerste keer inloggen",
+      "fr": "Spécifiez le nom de connexion et le mot de passe pour la première connexion",
+      "it": "Specificare il nome di accesso e la password per il primo accesso",
+      "es": "Especifique el nombre de usuario y la contraseña para iniciar sesión por primera vez",
+      "pl": "Podaj nazwę logowania i hasło do pierwszego logowania",
+      "zh-cn": "指定首次登录的登录名和密码"
    }
 };
 
+var oForm = document.getElementsByTagName("form")[0];
+var oErrorElement = document.getElementById("error");
 var oFirstTimeElement = document.getElementById("firsttime");
 var oFirstTimeLabelElement = document.getElementById("firsttime-label");
+
 if(oFirstTimeElement){
    oFirstTimeLabelElement.innerHTML = extendDictionary.firstTime[userLang] || extendDictionary.firstTime.en;
 
    oFirstTimeLabelElement.onclick = function () {
        oFirstTimeElement.checked = !oFirstTimeElement.checked;
+       if(!oFirstTimeElement.checked){
+          oErrorElement.style.display = "none";
+       }
    };
-   oFirstTimeElement.onchange = event => {
-      if(!event.target.checked){
-         return;
+   oForm.onsubmit = event => {
+      if(oFirstTimeElement.checked){
+         if(!document.getElementById("username").value || !document.getElementById("password").value){
+            oErrorElement.innerHTML = extendDictionary.loginNeeded[userLang] || extendDictionary.loginNeeded.en;
+            oErrorElement.style.display = "inline";
+            
+            return false, event.preventDefault();
+         }
       }
-      if(!document.getElementById("username").value || !document.getElementById("password").value){
-         let errElement = document.getElementById("error");
-         errElement.innerHTML = extendDictionary.loginNeeded[userLang] || extendDictionary.loginNeeded.en;
-         errElement.style.display = "inline";
-      }
+      return true;
    };
 }
