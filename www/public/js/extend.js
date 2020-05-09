@@ -1,6 +1,6 @@
 /* global userLang */
 
-var extendDictionary = {
+const extendDictionary = {
    "firstTime": {
       "en": "First time login with Account",
       "de": "Erstmalige Anmeldung mit dem Konto",
@@ -41,7 +41,7 @@ if(oFirstTimeElement){
           oErrorElement.style.display = "none";
        }
    };
-   oForm.onsubmit = event => {
+   oForm.onsubmit = (event) => {
       if(oFirstTimeElement.checked){
          if(!document.getElementById("username").value || !document.getElementById("password").value){
             oErrorElement.innerHTML = extendDictionary.loginNeeded[userLang] || extendDictionary.loginNeeded.en;
