@@ -4,7 +4,7 @@
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.weblogin.svg)](https://www.npmjs.com/package/iobroker.weblogin)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.weblogin.svg)](https://www.npmjs.com/package/iobroker.weblogin)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9c7ca543cf1b48a8837cc14adb50a264)](https://www.codacy.com/manual/armin.junge.81/ioBroker.weblogin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Vertumnus/ioBroker.weblogin&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d2ff17f2787d4ad4ba0b5d8ad29504ba)](https://www.codacy.com/manual/armin.junge.81/ioBroker.weblogin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Vertumnus/ioBroker.weblogin&amp;utm_campaign=Badge_Grade)
 
 [![NPM](https://nodei.co/npm/iobroker.weblogin.png?downloads=true)](https://nodei.co/npm/iobroker.weblogin/)
 
