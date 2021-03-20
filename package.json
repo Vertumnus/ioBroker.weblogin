@@ -15,8 +15,29 @@
    "bugs": "https://github.com/Vertumnus/ioBroker.weblogin/issues",
    "author": "Armin Junge",
    "license": "MIT",
-   "repository": "github:Vertumnus/ioBroker.weblogin",
+   "repository": {
+      "type": "git",
+      "url": "github:Vertumnus/ioBroker.weblogin"
+   },
    "contributors": [],
+   "main": "webextension.js",
+   "scripts": {
+      "test:package": "mocha test/package --exit",
+      "lint": "eslint"
+   },
+   "devDependencies": {
+      "@iobroker/testing": "^2.4.2",
+      "axios": "^0.21.1",
+      "chai": "^4.3.3",
+      "chai-as-promised": "^7.1.1",
+      "eslint": "^7.21.0",
+      "gulp": "^4.0.2",
+      "mocha": "^8.3.1",
+      "proxyquire": "^2.1.3",
+      "sinon": "^9.2.4",
+      "sinon-chai": "^3.5.0"
+   },
    "dependencies": {
+      "@iobroker/adapter-core": "^2.4.0"
    }
 }
