@@ -64,6 +64,11 @@
       "onlyWWW": true,
       "compact": true,
       "materialize": true,
+      "globalDependencies": [
+         {
+            "admin": ">=4.0.9"            
+         }
+      ],
       "dependencies": [
          {
             "web": ">=3.0.7"
