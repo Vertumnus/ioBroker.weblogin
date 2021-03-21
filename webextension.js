@@ -4,7 +4,7 @@
 
 const path = require('path')
 const express = require('express')
-const fs = require('fs')
+const { exception } = require('console')
 
 /**
  * Extension for Web Server
@@ -37,25 +37,32 @@ class WebExtension {
             return res.redirect((req.query.href)?req.query.href:'/')
          }
          // override login screen
-         let sLoginPage = fs.readFileSync(path.join(__dirname, '../iobroker.web/www/login/index.html')).toString('utf8')
-         if(this.config.firstTimeCheckbox){
-            // Inject first time checkbox
-            const sFirstTimeChk = fs.readFileSync(path.join(__dirname, 'www/views/firsttime.fraction.html')).toString('utf8')
-            sLoginPage = sLoginPage.replace(this.formHook, sFirstTimeChk + '\n' + this.formHook)
-         }
-         if(this.config.google){
-            // Inject google sign in
-            const sGoogleLogin = fs.readFileSync(path.join(__dirname, 'www/views/google.fraction.html')).toString('utf8')
-            sLoginPage = sLoginPage.replace(this.formHook, sGoogleLogin + '\n' + this.formHook)
-         }
-         
-         // Inject javascript stuff
-         sLoginPage = sLoginPage.replace(this.scriptHook, '<script src="/login/www/js/extend.js"></script>' + '\n' + this.scriptHook)
-         
-         res.contentType('text/html').status(200).send(sLoginPage.toString())
+         adapter.readFileAsync('web', '/login/index.html').then(oResult => {
+            let sLoginPage = oResult.file.toString('utf8')
+            if(this.config.firstTimeCheckbox){
+               // Inject first time checkbox
+               return adapter.readFileAsync('weblogin', '/views/firsttime.fraction.html').then(oResult => {
+                  return sLoginPage.replace(this.formHook, oResult.file.toString('utf8') + '\n' + this.formHook)
+               })
+            }
+            return sLoginPage
+         }).then(sLoginPage => {
+            if(this.config.google){
+               // Inject google sign in
+               return adapter.readFileAsync('weblogin', '/views/google.fraction.html').then(oResult => {
+                  return sLoginPage.replace(this.formHook, oResult.file.toString('utf8') + '\n' + this.formHook)
+               })
+            }
+            return sLoginPage
+         }).then(sLoginPage => {
+            return sLoginPage.replace(this.scriptHook, '<script src="/login/www/js/extend.js"></script>' + '\n' + this.scriptHook)
+         }).then(sLoginPage => {
+            adapter.log.info('Web Login Page replaced and extended')
+            res.contentType('text/html').status(200).send(sLoginPage.toString())
+         }).catch(sError => {
+            res.status(500).send(`500. Error: ${sError}`)
+         })
       })
-      
-      adapter.log.info('Web Login Page replaced and extended')
    }
 }
 
