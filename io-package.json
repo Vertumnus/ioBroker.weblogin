@@ -1,7 +1,7 @@
 {
    "common": {
       "name": "weblogin",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "news": {
          "0.1.0": {
             "en": "Ready for Beta",
@@ -14,6 +14,18 @@
             "es": "Listo para Beta",
             "pl": "Gotowy do wersji beta",
             "zh-cn": "准备测试版"
+         },
+         "0.1.1": {
+            "en": "Preparation for publishing in ioBroker.repositories",
+            "de": "Vorbereitung für die Veröffentlichung in ioBroker.repositories",
+            "ru": "Подготовка к публикации в ioBroker.repositories",
+            "pt": "Preparação para publicação em ioBroker.repositories",
+            "nl": "Voorbereiding voor publicatie in ioBroker.repositories",
+            "fr": "Préparation à la publication dans ioBroker.repositories",
+            "it": "Preparazione per la pubblicazione in ioBroker.repositories",
+            "es": "Preparación para publicar en ioBroker.repositories",
+            "pl": "Przygotowanie do publikacji w ioBroker.repositories",
+            "zh-cn": "准备在ioBroker.repositories中发布"
          }
       },
       "title": "Extended Web Login Page",

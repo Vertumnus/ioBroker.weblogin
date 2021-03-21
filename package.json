@@ -1,7 +1,7 @@
 {
    "name": "iobroker.weblogin",
    "description": "ioBroker Extended Web Login Page",
-   "version": "0.1.0",
+   "version": "0.1.1",
    "keywords": [
       "ioBroker",
       "Smarthome",
