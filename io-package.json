@@ -69,6 +69,7 @@
       "extIcon": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/admin/logo-login.png",
       "readme": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/README.md",
       "loglevel": "info",
+      "tier": 2,
       "mode": "extension",
       "singleton": true,
       "type": "utility",
