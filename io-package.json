@@ -62,7 +62,10 @@
          "Authentication",
          "Google"
       ],
-      "license": "MIT",
+      "licenseInformation": {
+         "type": "free",
+         "license": "MIT"
+      },
       "platform": "Javascript/Node.js",
       "icon": "admin/logo-login.png",
       "enabled": true,
