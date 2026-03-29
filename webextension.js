@@ -2,9 +2,9 @@
 /*eslint quotes: ["error", "single"]*/
 /*eslint-env es6*/
 
-const path = require('path')
+const path = require('node:path')
 const express = require('express')
-const { exception } = require('console')
+const { exception } = require('node:console')
 
 /**
  * Extension for Web Server
