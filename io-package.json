@@ -1,100 +1,102 @@
 {
-   "common": {
-      "name": "weblogin",
-      "version": "0.1.1",
-      "news": {
-         "0.1.0": {
-            "en": "Ready for Beta",
-            "de": "Bereit für die Beta",
-            "ru": "Готов к бета-версии",
-            "pt": "Pronto para Beta",
-            "nl": "Klaar voor bèta",
-            "fr": "Prêt pour la bêta",
-            "it": "Pronto per la beta",
-            "es": "Listo para Beta",
-            "pl": "Gotowy do wersji beta",
-            "zh-cn": "准备测试版"
-         },
-         "0.1.1": {
-            "en": "Preparation for publishing in ioBroker.repositories",
-            "de": "Vorbereitung für die Veröffentlichung in ioBroker.repositories",
-            "ru": "Подготовка к публикации в ioBroker.repositories",
-            "pt": "Preparação para publicação em ioBroker.repositories",
-            "nl": "Voorbereiding voor publicatie in ioBroker.repositories",
-            "fr": "Préparation à la publication dans ioBroker.repositories",
-            "it": "Preparazione per la pubblicazione in ioBroker.repositories",
-            "es": "Preparación para publicar en ioBroker.repositories",
-            "pl": "Przygotowanie do publikacji w ioBroker.repositories",
-            "zh-cn": "准备在ioBroker.repositories中发布"
-         }
+  "common": {
+    "name": "weblogin",
+    "version": "0.1.1",
+    "news": {
+      "0.1.0": {
+        "en": "Ready for Beta",
+        "de": "Bereit für die Beta",
+        "ru": "Готов к бета-версии",
+        "pt": "Pronto para Beta",
+        "nl": "Klaar voor bèta",
+        "fr": "Prêt pour la bêta",
+        "it": "Pronto per la beta",
+        "es": "Listo para Beta",
+        "pl": "Gotowy do wersji beta",
+        "zh-cn": "准备测试版"
       },
-      "title": "Extended Web Login Page",
-      "titleLang": {
-         "en": "Extended Web Login Page",
-         "de": "Erweiterte Web-Anmeldeseite",
-         "ru": "Расширенная веб-страница входа в систему",
-         "pt": "Página de login da web estendida",
-         "nl": "Uitgebreide webaanmeldingspagina",
-         "fr": "Page de connexion Web étendue",
-         "it": "Pagina di accesso Web estesa",
-         "es": "Página de inicio de sesión web ampliada",
-         "pl": "Rozszerzona strona logowania w sieci Web",
-         "zh-cn": "扩展的Web登录页面"
-      },
-      "desc": {
-         "en": "Use the web login page with alternative login possibilities",
-         "de": "Verwende die Web-Anmeldeseite mit alternativen Anmeldemöglichkeiten",
-         "ru": "Используйте веб-страницу входа с альтернативными возможностями входа",
-         "pt": "Use a página de login da web com possibilidades alternativas de login",
-         "nl": "Gebruik de webloginpagina met alternatieve inlogmogelijkheden",
-         "fr": "Utilisez la page de connexion Web avec d'autres possibilités de connexion",
-         "it": "Utilizza la pagina di accesso web con possibilità di accesso alternative",
-         "es": "Utilice la página de inicio de sesión web con posibilidades de inicio de sesión alternativas",
-         "pl": "Skorzystaj ze strony logowania internetowego z alternatywnymi możliwościami logowania",
-         "zh-cn": "使用Web登录页面以及其他登录方式"
-      },
-      "authors": [
-         "Armin Junge <armin.junge.81@gmail.com>"
-      ],
-      "keywords": [
-         "web",
-         "Login",
-         "Authentication",
-         "Google"
-      ],
-      "license": "MIT",
-      "platform": "Javascript/Node.js",
-      "icon": "admin/logo-login.png",
-      "enabled": true,
-      "extIcon": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/admin/logo-login.png",
-      "readme": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/README.md",
-      "loglevel": "info",
-      "mode": "extension",
-      "singleton": true,
-      "type": "utility",
-      "webExtension": "webextension.js",
-      "onlyWWW": true,
-      "compact": true,
-      "materialize": true,
-      "globalDependencies": [
-         {
-            "admin": ">=4.0.9"            
-         }
-      ],
-      "dependencies": [
-         {
-            "web": ">=3.0.7"
-         }
-      ],
-      "restartAdapters": [
-         "web"
-      ]
-   },
-   "native": {
-      "webInstance": "*",
-      "firstTimeCheckbox": true,
-      "google": true
-   },
-   "objects": [],
-   "instanceObjects": []
+      "0.1.1": {
+        "en": "Preparation for publishing in ioBroker.repositories",
+        "de": "Vorbereitung für die Veröffentlichung in ioBroker.repositories",
+        "ru": "Подготовка к публикации в ioBroker.repositories",
+        "pt": "Preparação para publicação em ioBroker.repositories",
+        "nl": "Voorbereiding voor publicatie in ioBroker.repositories",
+        "fr": "Préparation à la publication dans ioBroker.repositories",
+        "it": "Preparazione per la pubblicazione in ioBroker.repositories",
+        "es": "Preparación para publicar en ioBroker.repositories",
+        "pl": "Przygotowanie do publikacji w ioBroker.repositories",
+        "zh-cn": "准备在ioBroker.repositories中发布"
+      }
+    },
+    "title": "Extended Web Login Page",
+    "titleLang": {
+      "en": "Extended Web Login Page",
+      "de": "Erweiterte Web-Anmeldeseite",
+      "ru": "Расширенная веб-страница входа в систему",
+      "pt": "Página de login da web estendida",
+      "nl": "Uitgebreide webaanmeldingspagina",
+      "fr": "Page de connexion Web étendue",
+      "it": "Pagina di accesso Web estesa",
+      "es": "Página de inicio de sesión web ampliada",
+      "pl": "Rozszerzona strona logowania w sieci Web",
+      "zh-cn": "扩展的Web登录页面"
+    },
+    "desc": {
+      "en": "Use the web login page with alternative login possibilities",
+      "de": "Verwende die Web-Anmeldeseite mit alternativen Anmeldemöglichkeiten",
+      "ru": "Используйте веб-страницу входа с альтернативными возможностями входа",
+      "pt": "Use a página de login da web com possibilidades alternativas de login",
+      "nl": "Gebruik de webloginpagina met alternatieve inlogmogelijkheden",
+      "fr": "Utilisez la page de connexion Web avec d'autres possibilités de connexion",
+      "it": "Utilizza la pagina di accesso web con possibilità di accesso alternative",
+      "es": "Utilice la página de inicio de sesión web con posibilidades de inicio de sesión alternativas",
+      "pl": "Skorzystaj ze strony logowania internetowego z alternatywnymi możliwościami logowania",
+      "zh-cn": "使用Web登录页面以及其他登录方式"
+    },
+    "authors": [
+      "Armin Junge <armin.junge.81@gmail.com>"
+    ],
+    "keywords": [
+      "web",
+      "Login",
+      "Authentication",
+      "Google"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "icon": "admin/logo-login.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/admin/logo-login.png",
+    "readme": "https://raw.githubusercontent.com/Vertumnus/ioBroker.weblogin/master/README.md",
+    "loglevel": "info",
+    "mode": "extension",
+    "singleton": true,
+    "type": "utility",
+    "webExtension": "webextension.js",
+    "onlyWWW": true,
+    "compact": true,
+    "globalDependencies": [
+      {
+        "admin": ">=4.0.9"
+      }
+    ],
+    "dependencies": [
+      {
+        "web": ">=3.0.7"
+      }
+    ],
+    "restartAdapters": [
+      "web"
+    ],
+    "adminUI": {
+      "config": "materialize"
+    }
+  },
+  "native": {
+    "webInstance": "*",
+    "firstTimeCheckbox": true,
+    "google": true
+  },
+  "objects": [],
+  "instanceObjects": []
 }
