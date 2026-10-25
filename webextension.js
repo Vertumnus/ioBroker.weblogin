@@ -32,7 +32,7 @@ class WebExtension {
 
       app.use('/login/www/', express.static(path.join(__dirname, 'www/public')))
 
-      app.get('/login(/index.html)?', (req, res) => {
+      app.get('/login{/index.html}', (req, res) => {
          if(req.isAuthenticated()){
             return res.redirect((req.query.href)?req.query.href:'/')
          }
